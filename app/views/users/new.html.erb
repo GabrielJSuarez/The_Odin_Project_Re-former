@@ -1,1 +1,18 @@
 <h1>Test run</h1>
+
+<form action="/users" method="POST" accept-charset="UTF-8">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="username">User's Name</label>
+    <input type="text" name="user[username]">
+    <br>
+    <label for="email">Email Address</label>
+    <input type="email" name="user[email]">
+    <br>
+    <label for="password">User's Password</label>
+    <input type="password" name="user[password]">
+    <br>
+    <button name="submit">
+        <strong>Send Us</strong> a Message
+    </button>
+</form>
