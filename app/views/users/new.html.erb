@@ -1,3 +1,4 @@
+<!--
 <h1>Test run</h1>
 
 <form action="/users" method="POST" accept-charset="UTF-8">
@@ -16,3 +17,17 @@
         <strong>Send Us</strong> a Message
     </button>
 </form>
+-->
+
+<%= form_tag("/users") do %>
+    <%= label_tag(:username, "User name")%>
+    <%= text_field_tag(:username) %>
+<br>
+    <%= label_tag(:email, "User email") %>
+    <%= email_field(:user, :email) %>
+<br>
+    <%= label_tag(:password, "Password") %>
+    <%= password_field_tag(:password) %>
+<br>
+    <%= submit_tag("Submit info") %>
+<% end %>
