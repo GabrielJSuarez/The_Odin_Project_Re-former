@@ -2,7 +2,7 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
-    - "bin"
+    - "bin/**/*"
 
   DisplayCopNames: true
 
