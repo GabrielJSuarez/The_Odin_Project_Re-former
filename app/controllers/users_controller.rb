@@ -1,33 +1,33 @@
 class UsersController < ApplicationController
-    def new
-        @user = User.new
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      flash[:success] = 'Success'
+      redirect_to new_user_path
+    else
+      flash[:danger] = 'Try again'
+      render 'new'
     end
+  end
 
-    def create
-        @user = User.new(user_params)
+  def edit
+    @user = User.find(params[:id])
+  end
 
-        if @user.save
-            flash[:success] = "Success"
-            redirect_to new_user_path
-        else
-            flash[:danger] = "Try again"
-            render 'new'
-        end
-    end
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to edit_user_path(@user)
+  end
 
-    def edit
-        @user = User.find(params[:id])
-    end
+  private
 
-    def update
-        @user = User.find(params[:id])
-        @user.update(user_params)
-        redirect_to edit_user_path(@user)
-      end
-
-    private
-
-    def user_params
-        params.require(:user).permit(:username, :email, :password)
-    end
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
+  end
 end
