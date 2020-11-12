@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+    <h2>
+        The following errors prevented the article from getting created
+    </h2>
+
+    <ul>
+        <% @user.errors.full_messages.each do |error| %>
+            <li>
+                <%= error %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
