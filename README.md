@@ -18,6 +18,10 @@ $ `ruby bundle install`
 
 the command bundle install is important to install required gem for the game to start. After you finish type:
 
+$ `rails db:migrate`
+
+This will create the database migration files and the schema for the database. After this you can run the local server:
+
 $ `rails server`
 
 Open your browser to localhost
