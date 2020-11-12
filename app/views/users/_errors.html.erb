@@ -4,7 +4,7 @@
     </h2>
 
     <ul>
-        <%= @user.errors.full_message.each do |error| %>
+        <%= @user.errors.full_messages.each do |error| %>
             <li>
                 <%= error %>
             </li>
